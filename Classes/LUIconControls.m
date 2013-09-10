@@ -64,17 +64,33 @@
     code[0] = icon;
     NSString *text = [NSString stringWithCharacters:code length:1];
     UIFont *font = [UIFont fontWithName:self.fontName size:size];
+
+#ifndef __IPHONE_7_0
     CGSize textSize = [text sizeWithFont:font];
+#else
+    NSMutableParagraphStyle *style = [NSMutableParagraphStyle new];
+    [style setAlignment:NSTextAlignmentCenter];
+
+    NSDictionary *attr = @{
+        NSParagraphStyleAttributeName : style,
+        NSFontAttributeName : font
+    };
+    CGSize textSize = [text sizeWithAttributes:attr];
+#endif
 
     NSInteger posX = (NSInteger) ((imageSize.width - textSize.width) / 2);
     NSInteger posY = (NSInteger) ((imageSize.height - textSize.height) / 2);
 
     [color set];
 
+#ifndef __IPHONE_7_0
     [text drawInRect:CGRectMake(posX, posY, textSize.width, textSize.height)
             withFont:font
        lineBreakMode:NSLineBreakByTruncatingMiddle
            alignment:NSTextAlignmentCenter];
+#else
+    [text drawInRect:CGRectMake(posX, posY, textSize.width, textSize.height) withAttributes:attr];
+#endif
 
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
