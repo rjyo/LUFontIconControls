@@ -7,7 +7,7 @@
 //
 
 #import "LUViewController.h"
-#import "LUControls+FontCustom.h"
+#import "LUIconControls.h"
 
 @interface LUViewController ()
 
@@ -22,7 +22,7 @@
     
     UILabel *lbl;
     CGSize size;
-    int posY;
+    CGFloat posY;
     
     posY = 20;
     // Add the main description
@@ -52,7 +52,7 @@
     [self.view addSubview:lbl];
     
     // Add the label icon
-    lbl = [UILabel labelWithIcon:0 size:30];
+    lbl = [UILabel labelWithIcon:0xf100 size:30];
     lbl.textColor = [UIColor blueColor];
     lbl.frame = CGRectMake(10, posY, 50, 50);
     lbl.backgroundColor = [[UIColor lightGrayColor] colorWithAlphaComponent:0.1];
@@ -71,7 +71,7 @@
 
     posY += 60;
     // Add the image icon
-    UIImage *img = [UIImage imageWithIcon:1 imageSize:CGSizeMake(50, 50) size:40 color:[UIColor orangeColor]];
+    UIImage *img = [UIImage imageWithIcon:0xf101 imageSize:CGSizeMake(50, 50) size:40 color:[UIColor orangeColor]];
     UIImageView *imageView = [[UIImageView alloc] initWithImage:img];
     imageView.backgroundColor = [[UIColor lightGrayColor] colorWithAlphaComponent:0.1];
     imageView.frame = CGRectMake(10, posY, 50, 50);
@@ -90,7 +90,7 @@
     
     posY += 60;
     // Add the button icon
-    UIButton *button = [UIButton buttonWithIcon:2 size:40];
+    UIButton *button = [UIButton buttonWithIcon:0xf102 size:40];
     button.backgroundColor = [[UIColor lightGrayColor] colorWithAlphaComponent:0.1];
     button.frame = CGRectMake(10, posY, 50, 50);
     [button addTarget:self action:@selector(showAlert) forControlEvents:UIControlEventTouchUpInside];

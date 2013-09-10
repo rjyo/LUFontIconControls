@@ -6,16 +6,38 @@
 //  Copyright (c) 2013 Rakuraku Tech. All rights reserved.
 //
 
-#import "LUControls+FontCustom.h"
+#import "LUIconControls.h"
 
-@implementation UILabel (FontCustom)
 
-+ (UILabel *)labelWithIcon:(int)icon size:(NSInteger)size {
+@implementation LUIconControls
+
+- (id)init {
+    self = [super init];
+    if (self) {
+        self.fontName = @"fontcustom";
+    }
+
+    return self;
+}
+
++ (LUIconControls *)instance {
+    static LUIconControls *_instance = nil;
+
+    @synchronized (self) {
+        if (_instance == nil) {
+            _instance = [[self alloc] init];
+        }
+    }
+
+    return _instance;
+}
+
+- (UILabel *)labelWithIcon:(unichar)icon size:(NSInteger)size {
     UILabel *label = [[UILabel alloc] initWithFrame:CGRectZero];
     unichar *code = malloc(sizeof(unichar) * 1);
-    code[0] = 0xf100 + icon;
+    code[0] = icon;
     label.text = [NSString stringWithCharacters:code length:1];
-    label.font = [UIFont fontWithName:@"fontcustom" size:size];
+    label.font = [UIFont fontWithName:self.fontName size:size];
     label.textColor = [UIColor blackColor];
     label.backgroundColor = [UIColor clearColor];
     label.textAlignment = NSTextAlignmentCenter;
@@ -23,21 +45,58 @@
     return label;
 }
 
+- (UIButton *)buttonWithIcon:(unichar)icon size:(NSInteger)size {
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    unichar *code = malloc(sizeof(unichar) * 1);
+    code[0] = icon;
+    [button setTitle:[NSString stringWithCharacters:code length:1] forState:UIControlStateNormal];
+    [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    button.titleLabel.font = [UIFont fontWithName:self.fontName size:size];
+    button.backgroundColor = [UIColor clearColor];
+    free(code);
+    return button;
+}
+
+- (UIImage *)imageWithIcon:(unichar)icon imageSize:(CGSize)imageSize size:(NSInteger)size color:(UIColor *)color {
+    UIGraphicsBeginImageContextWithOptions(imageSize, NO, 0.0);
+
+    unichar *code = malloc(sizeof(unichar) * 1);
+    code[0] = icon;
+    NSString *text = [NSString stringWithCharacters:code length:1];
+    UIFont *font = [UIFont fontWithName:self.fontName size:size];
+    CGSize textSize = [text sizeWithFont:font];
+
+    NSInteger posX = (NSInteger) ((imageSize.width - textSize.width) / 2);
+    NSInteger posY = (NSInteger) ((imageSize.height - textSize.height) / 2);
+
+    [color set];
+
+    [text drawInRect:CGRectMake(posX, posY, textSize.width, textSize.height)
+            withFont:font
+       lineBreakMode:NSLineBreakByTruncatingMiddle
+           alignment:NSTextAlignmentCenter];
+
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+
+    return image;
+}
+
+@end
+
+@implementation UILabel (FontCustom)
+
++ (UILabel *)labelWithIcon:(unichar)icon size:(NSInteger)size {
+    return [[LUIconControls instance] labelWithIcon:icon size:size];
+}
+
 @end
 
 
 @implementation UIButton (FontCustom)
 
-+ (UIButton *)buttonWithIcon:(int)icon size:(NSInteger)size {
-    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-    unichar *code = malloc(sizeof(unichar) * 1);
-    code[0] = 0xf100 + icon;
-    [button setTitle:[NSString stringWithCharacters:code length:1] forState:UIControlStateNormal];
-    [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    button.titleLabel.font = [UIFont fontWithName:@"fontcustom" size:size];
-    button.backgroundColor = [UIColor clearColor];
-    free(code);
-    return button;
++ (UIButton *)buttonWithIcon:(unichar)icon size:(NSInteger)size {
+    return [[LUIconControls instance] buttonWithIcon:icon size:size];
 }
 
 @end
@@ -45,29 +104,8 @@
 
 @implementation UIImage (FontCustom)
 
-+ (UIImage *)imageWithIcon:(int)icon imageSize:(CGSize)imageSize size:(NSInteger)size color:(UIColor *)color {
-    UIGraphicsBeginImageContextWithOptions(imageSize, NO, 0.0);
-    
-    unichar *code = malloc(sizeof(unichar) * 1);
-    code[0] = 0xf100 + icon;
-    NSString *text = [NSString stringWithCharacters:code length:1];
-    UIFont *font = [UIFont fontWithName:@"fontcustom" size:size];
-    CGSize textSize = [text sizeWithFont:font];
-    
-    NSInteger posX = (NSInteger) ((imageSize.width - textSize.width) / 2);
-    NSInteger posY = (NSInteger) ((imageSize.height - textSize.height) / 2);
-    
-    [color set];
-    
-    [text drawInRect:CGRectMake(posX, posY, textSize.width, textSize.height)
-            withFont:font
-       lineBreakMode:NSLineBreakByTruncatingMiddle
-           alignment:NSTextAlignmentCenter];
-    
-    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    
-    return image;
++ (UIImage *)imageWithIcon:(unichar)icon imageSize:(CGSize)imageSize size:(NSInteger)size color:(UIColor *)color {
+    return [[LUIconControls instance] imageWithIcon:icon imageSize:imageSize size:size color:color];
 }
 
 @end
