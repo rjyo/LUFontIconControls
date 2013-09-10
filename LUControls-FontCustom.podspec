@@ -1,5 +1,5 @@
 Pod::Spec.new do |s|
-  s.name     = 'LUControls+FontCustom'
+  s.name     = 'LUControls-FontCustom'
   s.version  = '0.1'
   s.platform = :ios
   s.license  = 'MIT'
