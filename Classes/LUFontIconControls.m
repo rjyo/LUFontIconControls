@@ -1,15 +1,15 @@
 //
-//  LUControls+FontCustom.m
-//  LUControls+FontCustom
+//  LUFontIconControls.m
+//  LUFontIconControls
 //
 //  Created by Rakuraku Jyo on 2013/09/07.
 //  Copyright (c) 2013 Rakuraku Tech. All rights reserved.
 //
 
-#import "LUIconControls.h"
+#import "LUFontIconControls.h"
 
 
-@implementation LUIconControls
+@implementation LUFontIconControls
 
 - (id)init {
     self = [super init];
@@ -20,8 +20,8 @@
     return self;
 }
 
-+ (LUIconControls *)instance {
-    static LUIconControls *_instance = nil;
++ (LUFontIconControls *)instance {
+    static LUFontIconControls *_instance = nil;
 
     @synchronized (self) {
         if (_instance == nil) {
@@ -103,7 +103,7 @@
 @implementation UILabel (FontCustom)
 
 + (UILabel *)labelWithIcon:(unichar)icon size:(NSInteger)size {
-    return [[LUIconControls instance] labelWithIcon:icon size:size];
+    return [[LUFontIconControls instance] labelWithIcon:icon size:size];
 }
 
 @end
@@ -112,7 +112,7 @@
 @implementation UIButton (FontCustom)
 
 + (UIButton *)buttonWithIcon:(unichar)icon size:(NSInteger)size {
-    return [[LUIconControls instance] buttonWithIcon:icon size:size];
+    return [[LUFontIconControls instance] buttonWithIcon:icon size:size];
 }
 
 @end
@@ -121,7 +121,7 @@
 @implementation UIImage (FontCustom)
 
 + (UIImage *)imageWithIcon:(unichar)icon imageSize:(CGSize)imageSize size:(NSInteger)size color:(UIColor *)color {
-    return [[LUIconControls instance] imageWithIcon:icon imageSize:imageSize size:size color:color];
+    return [[LUFontIconControls instance] imageWithIcon:icon imageSize:imageSize size:size color:color];
 }
 
 @end

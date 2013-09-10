@@ -11,14 +11,13 @@
 		32C5879C17DF026900790959 /* LUAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 32C5879617DF026900790959 /* LUAppDelegate.m */; };
 		32C5879D17DF026900790959 /* LUViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32C5879817DF026900790959 /* LUViewController.m */; };
 		32C5879E17DF026900790959 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 32C5879917DF026900790959 /* main.m */; };
-		32C587A417DF039400790959 /* LUIconControls.m in Sources */ = {isa = PBXBuildFile; fileRef = 32C587A317DF039400790959 /* LUIconControls.m */; };
+		32C587A417DF039400790959 /* LUFontIconControls.m in Sources */ = {isa = PBXBuildFile; fileRef = 32C587A317DF039400790959 /* LUFontIconControls.m */; };
 		32D1826317DEFB670040D108 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32D1826217DEFB670040D108 /* Foundation.framework */; };
 		32D1826517DEFB670040D108 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32D1826417DEFB670040D108 /* CoreGraphics.framework */; };
-		32D1826717DEFB670040D108 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32D1826617DEFB670040D108 /* UIKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		19D00DB35A359FAA91DD0AED /* LUIconControls.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LUIconControls.h; path = Classes/LUIconControls.h; sourceTree = SOURCE_ROOT; };
+		19D00DB35A359FAA91DD0AED /* LUFontIconControls.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LUFontIconControls.h; path = Classes/LUFontIconControls.h; sourceTree = SOURCE_ROOT; };
 		32C5879217DF026900790959 /* Example-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Example-Info.plist"; sourceTree = "<group>"; };
 		32C5879317DF026900790959 /* Example-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Example-Prefix.pch"; sourceTree = "<group>"; };
 		32C5879417DF026900790959 /* fontcustom.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = fontcustom.ttf; sourceTree = "<group>"; };
@@ -27,11 +26,10 @@
 		32C5879717DF026900790959 /* LUViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUViewController.h; sourceTree = "<group>"; };
 		32C5879817DF026900790959 /* LUViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUViewController.m; sourceTree = "<group>"; };
 		32C5879917DF026900790959 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		32C587A317DF039400790959 /* LUIconControls.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LUIconControls.m; path = Classes/LUIconControls.m; sourceTree = SOURCE_ROOT; };
-		32D1825F17DEFB670040D108 /* LUControls-FontCustom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "LUControls-FontCustom.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		32C587A317DF039400790959 /* LUFontIconControls.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LUFontIconControls.m; path = Classes/LUFontIconControls.m; sourceTree = SOURCE_ROOT; };
+		32D1825F17DEFB670040D108 /* LUFontIconControls.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LUFontIconControls.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		32D1826217DEFB670040D108 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		32D1826417DEFB670040D108 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		32D1826617DEFB670040D108 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,7 +38,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				32D1826517DEFB670040D108 /* CoreGraphics.framework in Frameworks */,
-				32D1826717DEFB670040D108 /* UIKit.framework in Frameworks */,
 				32D1826317DEFB670040D108 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -51,8 +48,8 @@
 		32C5878517DF020600790959 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				32C587A317DF039400790959 /* LUIconControls.m */,
-				19D00DB35A359FAA91DD0AED /* LUIconControls.h */,
+				32C587A317DF039400790959 /* LUFontIconControls.m */,
+				19D00DB35A359FAA91DD0AED /* LUFontIconControls.h */,
 			);
 			name = Classes;
 			path = ../../Classes;
@@ -70,7 +67,7 @@
 		32D1826017DEFB670040D108 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				32D1825F17DEFB670040D108 /* LUControls-FontCustom.app */,
+				32D1825F17DEFB670040D108 /* LUFontIconControls.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -80,7 +77,6 @@
 			children = (
 				32D1826217DEFB670040D108 /* Foundation.framework */,
 				32D1826417DEFB670040D108 /* CoreGraphics.framework */,
-				32D1826617DEFB670040D108 /* UIKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -112,9 +108,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		32D1825E17DEFB670040D108 /* LUControls-FontCustom */ = {
+		32D1825E17DEFB670040D108 /* LUFontIconControls */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 32D1829417DEFB670040D108 /* Build configuration list for PBXNativeTarget "LUControls-FontCustom" */;
+			buildConfigurationList = 32D1829417DEFB670040D108 /* Build configuration list for PBXNativeTarget "LUFontIconControls" */;
 			buildPhases = (
 				32D1825B17DEFB670040D108 /* Sources */,
 				32D1825C17DEFB670040D108 /* Frameworks */,
@@ -124,9 +120,9 @@
 			);
 			dependencies = (
 			);
-			name = "LUControls-FontCustom";
-			productName = "LUControls-FontCustom";
-			productReference = 32D1825F17DEFB670040D108 /* LUControls-FontCustom.app */;
+			name = LUFontIconControls;
+			productName = LUFontIconControls;
+			productReference = 32D1825F17DEFB670040D108 /* LUFontIconControls.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -152,7 +148,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				32D1825E17DEFB670040D108 /* LUControls-FontCustom */,
+				32D1825E17DEFB670040D108 /* LUFontIconControls */,
 			);
 		};
 /* End PBXProject section */
@@ -176,7 +172,7 @@
 				32C5879C17DF026900790959 /* LUAppDelegate.m in Sources */,
 				32C5879D17DF026900790959 /* LUViewController.m in Sources */,
 				32C5879E17DF026900790959 /* main.m in Sources */,
-				32C587A417DF039400790959 /* LUIconControls.m in Sources */,
+				32C587A417DF039400790959 /* LUFontIconControls.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,7 +287,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		32D1829417DEFB670040D108 /* Build configuration list for PBXNativeTarget "LUControls-FontCustom" */ = {
+		32D1829417DEFB670040D108 /* Build configuration list for PBXNativeTarget "LUFontIconControls" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				32D1829517DEFB670040D108 /* Debug */,

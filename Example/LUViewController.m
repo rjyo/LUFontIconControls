@@ -1,13 +1,13 @@
 //
 //  LUViewController.m
-//  LUControls-FontCustom
+//  LUFontIconControls
 //
 //  Created by 徐 楽楽 on 2013/09/10.
 //  Copyright (c) 2013年 Rakuraku Jyo. All rights reserved.
 //
 
 #import "LUViewController.h"
-#import "LUIconControls.h"
+#import "LUFontIconControls.h"
 
 @interface LUViewController ()
 
@@ -110,7 +110,7 @@
 
 - (void)showAlert
 {
-    [[[UIAlertView alloc] initWithTitle:@"LUControls-FontCustom" message:@"Please enjoy." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+    [[[UIAlertView alloc] initWithTitle:@"LUFontIconControls" message:@"Please enjoy." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
 }
 
 - (void)didReceiveMemoryWarning

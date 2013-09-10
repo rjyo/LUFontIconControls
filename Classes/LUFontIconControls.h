@@ -1,15 +1,15 @@
 //
-//  LUControls+FontCustom.h
-//  LUControls+FontCustom
+//  LUFontIconControls.h
+//  LUFontIconControls
 //
 //  Created by Rakuraku Jyo on 2013/09/07.
 //  Copyright (c) 2013 Rakuraku Tech. All rights reserved.
 //
 
-@interface LUIconControls : NSObject
+@interface LUFontIconControls : NSObject
 @property(nonatomic, copy) NSString *fontName;
 
-+ (LUIconControls *)instance;
++ (LUFontIconControls *)instance;
 
 @end
 
