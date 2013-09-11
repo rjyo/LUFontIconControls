@@ -3,22 +3,13 @@ LUFontIconControls
 
 LUFontIconControls provides an easy way to use icon fonts to replace images in your iOS app. LUFontIconControls provides a simple API to use icon font to generate iOS controls like `UIImage`, `UILabel`, `UIButton`. And by using `UIImage`, you can use it almost anywhere you want, including `UITabBarItem` and etc. 
 
-You can:
+With LUFontIconControls, you can:
 
 - Choose any color
 - Choose any size
 - Auto scaling for retina display
 
 And, __LUFontIconControls is also iOS7 ready!__
-
-CocoaPods
-=====================
-    
-Add the following line to your Podfile
-    
-```ruby    
-pod 'LUFontIconControls', :git => 'https://github.com/rjyo/LUFontIconControls.git'
-```
 
 Usage
 =====================
@@ -27,7 +18,6 @@ Usage
 // UIButton, 0xf102 is the unicode of the icon
 UIButton *button = [UIButton buttonWithIcon:0xf102 size:40];
 button.frame = ...;
-[button addTarget:self action:@selector(hello) forControlEvents:UIControlEventTouchUpInside];
 [self.view addSubview:button];
 
 // UIImage
@@ -35,9 +25,23 @@ UIImage *image = [UIImage imageWithIcon:0xf101 imageSize:CGSizeMake(50, 50) size
 
 // UILabel
 UILabel *lbl = [UILabel labelWithIcon:0xf100 size:30];
-lbl.textColor = [UIColor blueColor];
 lbl.frame = ...;
 [self.view addSubview:lbl];        
+```
+
+Screenshot
+=====================
+This is what you get when running the Example project bundled.
+
+![screenshot](https://raw.github.com/rjyo/LUFontIconControls/master/Example/screenshot.png)
+
+CocoaPods
+=====================
+    
+Add the following line to your Podfile
+    
+```ruby    
+pod 'LUFontIconControls', :git => 'https://github.com/rjyo/LUFontIconControls.git'
 ```
 
 Setup
@@ -58,13 +62,9 @@ Add the following line to your YourAppName-Info.plist to support custom font. If
 </array>
 ```
 
-Screenshot
-=====================
-![screenshot](https://raw.github.com/rjyo/LUFontIconControls/master/Example/screenshot.png)
-
 Build Your Fonts
 =====================
-Put your SVG files of your icons under ./Icons and run `make font` to generate the custom icon font. [fontcustom](https://github.com/FontCustom/fontcustom/) cli is need.
+Check the `Example` project bundled for building your font from command line. Put your SVG files of your icons under ./Icons and run `make font` to generate the custom icon font. [fontcustom](https://github.com/FontCustom/fontcustom/) cli is need.
 
 Bundled Icons
 =====================
