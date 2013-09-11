@@ -6,7 +6,7 @@ Pod::Spec.new do |s|
   s.summary  = 'Easy way to use icon fonts to replace images in your iOS app.'
   s.homepage = 'https://github.com/rjyo/LUFontIconControls'
   s.author   = { 'Rakuraku Jyo' => 'jyo.rakuraku@gmail.com' }
-  s.source   = { :git => 'https://github.com/rjyo/LUFontIconControls.git' }
+  s.source   = { :git => 'https://github.com/rjyo/LUFontIconControls.git', :tag => '0.1' }
 
   s.description = 'Easy way to use icon fonts to replace images in your iOS app. Using icon fonts in iOS will make you life easier. You can do the following to your icon:  Choose any color / Choose any size / Auto scale up for retina display'
 
