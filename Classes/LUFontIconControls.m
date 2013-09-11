@@ -73,7 +73,8 @@
 
     NSDictionary *attr = @{
         NSParagraphStyleAttributeName : style,
-        NSFontAttributeName : font
+        NSFontAttributeName : font,
+        NSForegroundColorAttributeName : color
     };
     CGSize textSize = [text sizeWithAttributes:attr];
 #endif

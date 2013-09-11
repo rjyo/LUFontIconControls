@@ -8,6 +8,7 @@
 
 #import "LUAppDelegate.h"
 #import "LUViewController.h"
+#import "LUFontIconControls.h"
 
 @implementation LUAppDelegate
 
@@ -17,6 +18,8 @@
     LUViewController *controller = [LUViewController new];
     [_window setRootViewController:controller];
     [_window makeKeyAndVisible];
+    
+    [LUFontIconControls instance].fontName = @"fontcustom";
 
     // Override point for customization after application launch.
     return YES;

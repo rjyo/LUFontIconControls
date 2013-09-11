@@ -40,16 +40,6 @@
     [self.view addSubview:lbl];
     
     posY = CGRectGetMaxY(lbl.frame) + 20;
-    // Add the label icon description
-    lbl = [UILabel new];
-    lbl.textColor = [UIColor blackColor];
-    lbl.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:16];
-    lbl.text = @"Icon as a UILabel, fontsize = 30";
-    lbl.lineBreakMode = NSLineBreakByWordWrapping;
-    lbl.numberOfLines = 2;
-    size = [lbl sizeThatFits:CGSizeMake(240, 100)];
-    lbl.frame = CGRectMake(70, posY, size.width, size.height);
-    [self.view addSubview:lbl];
     
     // Add the label icon
     lbl = [UILabel labelWithIcon:0xf100 size:30];
@@ -62,7 +52,7 @@
     lbl = [UILabel new];
     lbl.textColor = [UIColor blackColor];
     lbl.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:16];
-    lbl.text = @"Icon as a UILabel, fontsize = 30";
+    lbl.text = @"Icon as a UILabel, fontsize = 30, color = blue";
     lbl.lineBreakMode = NSLineBreakByWordWrapping;
     lbl.numberOfLines = 2;
     size = [lbl sizeThatFits:CGSizeMake(240, 100)];
@@ -71,7 +61,7 @@
 
     posY += 60;
     // Add the image icon
-    UIImage *img = [UIImage imageWithIcon:0xf101 imageSize:CGSizeMake(50, 50) size:40 color:[UIColor orangeColor]];
+    UIImage *img = [UIImage imageWithIcon:0xf101 imageSize:CGSizeMake(50, 50) size:40 color:[UIColor redColor]];
     UIImageView *imageView = [[UIImageView alloc] initWithImage:img];
     imageView.backgroundColor = [[UIColor lightGrayColor] colorWithAlphaComponent:0.1];
     imageView.frame = CGRectMake(10, posY, 50, 50);

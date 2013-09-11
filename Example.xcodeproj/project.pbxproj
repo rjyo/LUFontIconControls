@@ -48,8 +48,8 @@
 		32C5878517DF020600790959 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				32C587A317DF039400790959 /* LUFontIconControls.m */,
 				19D00DB35A359FAA91DD0AED /* LUFontIconControls.h */,
+				32C587A317DF039400790959 /* LUFontIconControls.m */,
 			);
 			name = Classes;
 			path = ../../Classes;
