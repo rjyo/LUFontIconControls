@@ -63,6 +63,8 @@
     unichar *code = malloc(sizeof(unichar) * 1);
     code[0] = icon;
     NSString *text = [NSString stringWithCharacters:code length:1];
+    free(code);
+
     UIFont *font = [UIFont fontWithName:self.fontName size:size];
 
 #ifndef __IPHONE_7_0
